@@ -1,9 +1,9 @@
 #ifndef SENTIMENTCLASSIFIER_H
 #define SENTIMENTCLASSIFIER_H
 
-#include <map>
-#include <vector>
 #include "DSString.h"
+#include <vector>
+#include <map>
 
 class SentimentClassifier {
 private:
@@ -11,9 +11,11 @@ private:
     std::map<DSString, int> negativeWords;
 
 public:
-    void train(const char* trainingFile);
+    void train(const DSString& trainFile);
     int predict(const DSString& tweet);
-    void evaluate(const char* testFile, const char* truthFile, const char* resultsFile, const char* accuracyFile);
+    void evaluate(const DSString& testFile, const DSString& truthFile,
+                  const DSString& resultFile, const DSString& accuracyFile);
 };
 
-#endif // SENTIMENTCLASSIFIER_H
+#endif
+
