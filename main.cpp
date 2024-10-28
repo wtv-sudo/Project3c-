@@ -1,8 +1,9 @@
 #include "SentimentClassifier.h"
+#include <iostream>
 
 int main(int argc, char* argv[]) {
     if (argc != 6) {
-        std::cerr << "Usage: " << argv[0] << " <training_file> <test_file> <truth_file> <results_file> <accuracy_file>" << std::endl;
+        std::cerr << "Usage: " << argv[0] << " <train_file> <test_file> <truth_file> <result_file> <accuracy_file>" << std::endl;
         return 1;
     }
 
@@ -12,3 +13,4 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
