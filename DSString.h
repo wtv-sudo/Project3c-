@@ -2,24 +2,28 @@
 #define DSSTRING_H
 
 #include <iostream>
-#include <cstring>
 
 class DSString {
 private:
-    char* str; // Pointer to dynamically allocated char array
-    size_t len;
+    char* data;
+    int len;
 
 public:
-    // Constructors, Copy Constructor, Destructor, Assignment operator
-    DSString(const char* s = "");
+    DSString();
+    DSString(const char* str);
     DSString(const DSString& other);
-    DSString& operator=(const DSString& other);
     ~DSString();
 
-    // String manipulation and utility functions (add as needed)
-    const char* c_str() const { return str; }
-    bool operator==(const DSString& other) const;
-    // Additional methods like substring, split, etc. can be added as needed
+    DSString& operator=(const DSString& other);
+    DSString operator+(const DSString& rhs);
+    bool operator==(const DSString& rhs) const;
+    bool operator!=(const DSString& rhs) const;
+    bool operator<(const DSString& rhs) const;
+    char& operator[](int index);
+
+    int length() const;
+    char* c_str() const;
 };
 
-#endif // DSSTRING_H
+#endif
+
